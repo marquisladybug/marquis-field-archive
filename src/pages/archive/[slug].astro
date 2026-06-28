@@ -50,11 +50,8 @@ const image = resolvePhotoImage(photo.data.image);
 
   .detail-image {
     margin: 0;
-    background: var(--panel);
-    border: 1px solid var(--border);
     display: grid;
     place-items: center;
-    overflow: hidden;
   }
 
   .detail-image img,
@@ -84,9 +81,12 @@ const image = resolvePhotoImage(photo.data.image);
   }
 
   .missing-image {
+    width: 100%;
     min-height: min(56vh, 520px);
     display: grid;
     place-items: center;
+    background: var(--panel);
+    border: 1px solid var(--border);
     color: var(--muted);
   }
 
