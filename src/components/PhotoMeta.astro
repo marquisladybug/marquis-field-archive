@@ -5,42 +5,37 @@ interface Props {
   title: string;
   series: "Urban Structure Study" | "Urban Drift";
   date: string;
-  location: string;
 }
 
-const { title, series, date, location } = Astro.props;
+const { title, series, date } = Astro.props;
+const [year, month] = date.split("-");
+const yearMonth = year && month ? `${year}.${month}` : date;
 ---
 
 <div class="photo-meta">
+  <SeriesBadge series={series} />
   <h2>{title}</h2>
-  <div class="meta-line">
-    <SeriesBadge series={series} />
-    <span>{date}</span>
-    <span>{location}</span>
-  </div>
+  <p class="meta-date">{yearMonth}</p>
 </div>
 
 <style>
   .photo-meta {
     display: grid;
-    gap: 7px;
+    gap: 5px;
   }
 
   h2 {
     margin: 0;
     font-family: var(--font-body);
-    font-size: clamp(18px, 1.35vw, 22px);
+    font-size: clamp(15px, 1.15vw, 18px);
     font-weight: 500;
     line-height: 1.22;
   }
 
-  .meta-line {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 7px 12px;
+  .meta-date {
+    margin: 0;
     color: var(--muted);
     font-family: var(--font-mono);
-    font-size: clamp(11px, 0.95vw, 12px);
+    font-size: clamp(10px, 0.8vw, 12px);
   }
 </style>

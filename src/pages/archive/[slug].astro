@@ -1,10 +1,8 @@
 ---
 import { Image } from "astro:assets";
-import { render } from "astro:content";
 import PhotoLayout from "@/layouts/PhotoLayout.astro";
 import PhotoMeta from "@/components/PhotoMeta.astro";
-import { getAdjacentPhotos, getPhotoSlug, getPhotos, resolvePhotoImage } from "@/lib/photos";
-import { withBase } from "@/lib/paths";
+import { getPhotoSlug, getPhotos, resolvePhotoImage } from "@/lib/photos";
 
 export async function getStaticPaths() {
   const photos = await getPhotos();
@@ -15,10 +13,6 @@ export async function getStaticPaths() {
 }
 
 const { photo } = Astro.props;
-const photos = await getPhotos();
-const currentSlug = getPhotoSlug(photo);
-const { previous, next } = getAdjacentPhotos(photos, currentSlug);
-const { Content } = await render(photo);
 const image = resolvePhotoImage(photo.data.image);
 ---
 
@@ -28,9 +22,9 @@ const image = resolvePhotoImage(photo.data.image);
       <figure class="detail-image">
         {
           typeof image === "string" ? (
-            <img src={image} alt={`${photo.data.title}, ${photo.data.location}`} />
+            <img src={image} alt={photo.data.title} />
           ) : image ? (
-            <Image src={image} alt={`${photo.data.title}, ${photo.data.location}`} widths={[900, 1400, 1800, 2200, 2600]} sizes="92vw" />
+            <Image src={image} alt={photo.data.title} widths={[900, 1400, 1800, 2200, 2600]} sizes="92vw" />
           ) : (
             <div class="missing-image">Image pending</div>
           )
@@ -42,27 +36,9 @@ const image = resolvePhotoImage(photo.data.image);
           title={photo.data.title}
           series={photo.data.series}
           date={photo.data.date}
-          location={photo.data.location}
         />
-        <div class="field-note">
-          <Content />
-        </div>
-        {
-          photo.data.instagram && (
-            <a class="text-link" href={photo.data.instagram} rel="noreferrer" target="_blank">Instagram record</a>
-          )
-        }
       </div>
     </article>
-
-    <nav class="detail-nav" aria-label="Adjacent archive entries">
-      <span>
-        {previous && <a class="text-link" href={withBase(`/archive/${getPhotoSlug(previous)}/`)}>Previous: {previous.data.title}</a>}
-      </span>
-      <span>
-        {next && <a class="text-link" href={withBase(`/archive/${getPhotoSlug(next)}/`)}>Next: {next.data.title}</a>}
-      </span>
-    </nav>
   </main>
 </PhotoLayout>
 
@@ -98,33 +74,7 @@ const image = resolvePhotoImage(photo.data.image);
   }
 
   .detail-body :global(.photo-meta h2) {
-    font-size: clamp(18px, 1.6vw, 22px);
-  }
-
-  .field-note {
-    color: var(--accent);
-    max-width: 660px;
-    font-size: clamp(15px, 1vw, 16px);
-  }
-
-  .field-note :global(p) {
-    margin: 0;
-  }
-
-  .detail-nav {
-    margin-top: 42px;
-    padding-top: 16px;
-    border-top: 1px solid var(--border);
-    display: flex;
-    justify-content: space-between;
-    gap: 24px;
-    color: var(--muted);
-    font-family: var(--font-mono);
-    font-size: 11px;
-  }
-
-  .detail-nav span:last-child {
-    text-align: right;
+    font-size: clamp(15px, 1.15vw, 18px);
   }
 
   .missing-image {
@@ -139,15 +89,6 @@ const image = resolvePhotoImage(photo.data.image);
       width: calc(100vw - 24px);
       margin-left: 50%;
       transform: translateX(-50%);
-    }
-
-    .detail-nav {
-      display: grid;
-      gap: 14px;
-    }
-
-    .detail-nav span:last-child {
-      text-align: left;
     }
   }
 </style>

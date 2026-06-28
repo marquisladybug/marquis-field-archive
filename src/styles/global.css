@@ -98,20 +98,14 @@ img {
   text-transform: uppercase;
 }
 
-.page-title {
-  max-width: 780px;
+.label-title {
   margin: 0;
-  font-size: clamp(22px, 1.9vw, 28px);
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: clamp(12px, 0.95vw, 14px);
   font-weight: 500;
-  line-height: 1.12;
-}
-
-.page-copy {
-  max-width: 700px;
-  margin: 14px 0 0;
-  color: var(--accent);
-  font-size: clamp(15px, 1.2vw, 17px);
-  line-height: 1.62;
+  letter-spacing: 0.06em;
+  line-height: 1.4;
 }
 
 .text-block {
@@ -120,8 +114,8 @@ img {
   font-size: clamp(15px, 1.1vw, 17px);
 }
 
-.page-copy-block {
-  margin-top: 14px;
+.label-copy-block {
+  margin-top: 18px;
 }
 
 .text-block p {
