@@ -1,72 +1,46 @@
 ---
-import { Image } from "astro:assets";
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import { getPhotos, resolvePhotoImage } from "@/lib/photos";
-
-const photos = await getPhotos();
-const hero = photos[0];
-const heroImage = hero ? resolvePhotoImage(hero.data.image) : undefined;
+import { withBase } from "@/lib/paths";
 ---
 
 <BaseLayout>
   <main class="page">
-    <section class="hero">
-      <figure>
-        {
-          typeof heroImage === "string" ? (
-            <img src={heroImage} alt={hero ? `${hero.data.title}, ${hero.data.location}` : "Archive placeholder"} />
-          ) : heroImage ? (
-            <Image src={heroImage} alt={`${hero.data.title}, ${hero.data.location}`} widths={[900, 1400, 1800, 2200]} sizes="calc(100vw - 40px)" loading="eager" />
-          ) : null
-        }
-      </figure>
-      <div class="hero-text">
-        <p class="kicker">Civilization OS field logs</p>
-        <h1 class="visually-hidden">Marquis Ladybug Field Archive</h1>
-      </div>
+    <section class="home-index">
+      <p class="kicker">Civilization OS field logs</p>
+      <h1 class="visually-hidden">Marquis Ladybug Field Archive</h1>
+      <nav class="series-access" aria-label="Archive series">
+        <a href={withBase("/urban-structure-study/")}>Urban Structure Study</a>
+        <a href={withBase("/urban-drift/")}>Urban Drift</a>
+      </nav>
     </section>
   </main>
 </BaseLayout>
 
 <style>
-  .hero {
+  .home-index {
     display: grid;
     gap: 18px;
+    padding-top: 8px;
   }
 
-  figure {
-    margin: 0;
-    background: var(--panel);
-    border: 1px solid var(--border);
-    aspect-ratio: 16 / 7;
-    max-height: 400px;
-    overflow: hidden;
+  .series-access {
+    display: grid;
+    gap: 8px;
+    width: fit-content;
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: clamp(14px, 1vw, 16px);
+    line-height: 1.35;
   }
 
-  figure img,
-  figure :global(picture),
-  figure :global(picture img) {
-    width: 100%;
-    height: 100%;
+  .series-access a {
+    width: fit-content;
+    border-bottom: 1px solid var(--border-soft);
+    padding-bottom: 2px;
   }
 
-  figure img,
-  figure :global(picture img) {
-    object-fit: cover;
-  }
-
-  .hero-text {
-    order: -1;
-    max-width: 680px;
-  }
-
-  @media (max-width: 760px) {
-    figure {
-      width: calc(100vw - 24px);
-      margin-left: 50%;
-      transform: translateX(-50%);
-      aspect-ratio: 3 / 2;
-      max-height: none;
-    }
+  .series-access a:hover,
+  .series-access a:focus-visible {
+    border-color: var(--text);
   }
 </style>
