@@ -3,7 +3,7 @@ import { getCollection, type CollectionEntry } from "astro:content";
 export type PhotoEntry = CollectionEntry<"photos">;
 
 export const photoImages = import.meta.glob<{ default: ImageMetadata }>(
-  "/src/assets/photos/*.{jpg,jpeg,png,webp,avif}",
+  "/src/assets/photos/*.{jpg,jpeg,png,webp}",
   { eager: true }
 );
 
@@ -38,6 +38,7 @@ export function getPhotoSlug(photo: PhotoEntry) {
 }
 
 export function resolvePhotoImage(path: string) {
-  const normalized = path.startsWith("/") ? path : `/src/assets/photos/${path}`;
+  const filename = path.trim().replaceAll("\\", "/").split("/").filter(Boolean).pop();
+  const normalized = filename ? `/src/assets/photos/${filename}` : "";
   return photoImages[normalized]?.default ?? photoImageUrls[normalized]?.default;
 }
