@@ -25,7 +25,7 @@ const heroImage = hero ? resolvePhotoImage(hero.data.image) : undefined;
       </figure>
       <div class="hero-text">
         <p class="kicker">Civilization OS field logs</p>
-        <h1 class="page-title">Marquis Ladybug Field Archive</h1>
+        <h1 class="page-title hero-title">Marquis Ladybug Field Archive</h1>
         <p class="page-copy">
           A quiet photo archive for urban structures, movement, light, and human trace observations by Marquis Ladybug / てんとうむし侯爵.
         </p>
@@ -49,14 +49,15 @@ const heroImage = hero ? resolvePhotoImage(hero.data.image) : undefined;
 <style>
   .hero {
     display: grid;
-    gap: 34px;
+    gap: 28px;
   }
 
   figure {
     margin: 0;
     background: var(--panel);
-    border: 1px solid var(--border);
-    aspect-ratio: 16 / 9;
+    border: 1px solid var(--border-soft);
+    aspect-ratio: 21 / 8;
+    max-height: 430px;
     overflow: hidden;
   }
 
@@ -73,7 +74,12 @@ const heroImage = hero ? resolvePhotoImage(hero.data.image) : undefined;
   }
 
   .hero-text {
-    max-width: 980px;
+    order: -1;
+    max-width: 900px;
+  }
+
+  .hero-title {
+    font-size: clamp(38px, 6vw, 68px);
   }
 
   @media (max-width: 760px) {
@@ -81,7 +87,8 @@ const heroImage = hero ? resolvePhotoImage(hero.data.image) : undefined;
       width: calc(100vw - 24px);
       margin-left: 50%;
       transform: translateX(-50%);
-      aspect-ratio: 4 / 5;
+      aspect-ratio: 16 / 10;
+      max-height: none;
     }
   }
 </style>

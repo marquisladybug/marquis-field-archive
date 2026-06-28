@@ -25,20 +25,21 @@ const navItems = [
   .site-header {
     width: min(var(--max), calc(100vw - 40px));
     margin: 0 auto;
-    padding: 24px 0;
+    padding: 18px 0;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    gap: 24px;
-    border-bottom: 1px solid var(--border);
+    gap: 22px;
+    border-bottom: 1px solid var(--border-soft);
   }
 
   .brand {
     display: grid;
     gap: 2px;
     color: var(--text);
-    font-size: 13px;
-    line-height: 1.25;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    line-height: 1.35;
     text-transform: uppercase;
   }
 
@@ -50,9 +51,15 @@ const navItems = [
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
-    gap: 10px 18px;
+    gap: 8px 14px;
     color: var(--muted);
-    font-size: 12px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    line-height: 1.6;
+  }
+
+  .nav a {
+    white-space: nowrap;
   }
 
   .nav a:hover,
@@ -64,11 +71,14 @@ const navItems = [
     .site-header {
       width: calc(100vw - 24px);
       display: grid;
-      padding-top: 18px;
+      gap: 14px;
+      padding: 16px 0;
     }
 
     .nav {
       justify-content: flex-start;
+      gap: 7px 13px;
+      max-width: 100%;
     }
   }
 </style>

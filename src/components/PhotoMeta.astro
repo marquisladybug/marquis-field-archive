@@ -23,22 +23,23 @@ const { title, series, date, location } = Astro.props;
 <style>
   .photo-meta {
     display: grid;
-    gap: 10px;
+    gap: 8px;
   }
 
   h2 {
     margin: 0;
-    font-size: clamp(18px, 2.5vw, 28px);
+    font-size: clamp(17px, 1.8vw, 23px);
     font-weight: 500;
-    line-height: 1.1;
+    line-height: 1.18;
   }
 
   .meta-line {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 8px 14px;
+    gap: 7px 12px;
     color: var(--muted);
-    font-size: 12px;
+    font-family: var(--font-mono);
+    font-size: 11px;
   }
 </style>
