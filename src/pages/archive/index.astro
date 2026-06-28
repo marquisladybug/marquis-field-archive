@@ -8,10 +8,8 @@ const photos = await getPhotos();
 
 <BaseLayout title="Field Archive" description="All Marquis Ladybug photo archive entries.">
   <main class="page">
-    <section class="section">
-      <p class="kicker">Field Archive</p>
-      <h1 class="page-title">All entries</h1>
-      <p class="page-copy">Photographs listed as observation records: title, series, date, location.</p>
+    <section class="index-head">
+      <p class="kicker">FIELD ARCHIVE</p>
     </section>
     <PhotoGrid photos={photos} />
   </main>

@@ -85,6 +85,10 @@ img {
   border-top: 0;
 }
 
+.index-head {
+  padding: 8px 0 30px;
+}
+
 .kicker {
   margin: 0 0 10px;
   color: var(--muted);
@@ -97,7 +101,7 @@ img {
 .page-title {
   max-width: 780px;
   margin: 0;
-  font-size: clamp(24px, 2.4vw, 32px);
+  font-size: clamp(22px, 1.9vw, 28px);
   font-weight: 500;
   line-height: 1.12;
 }
@@ -113,6 +117,7 @@ img {
 .text-block {
   max-width: 680px;
   color: var(--accent);
+  font-size: clamp(15px, 1.1vw, 17px);
 }
 
 .page-copy-block {
