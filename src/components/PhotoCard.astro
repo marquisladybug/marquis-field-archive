@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import PhotoMeta from "@/components/PhotoMeta.astro";
+import SeriesBadge from "@/components/SeriesBadge.astro";
 import { getPhotoSlug, resolvePhotoImage, type PhotoEntry } from "@/lib/photos";
 import { withBase } from "@/lib/paths";
 
@@ -28,12 +28,10 @@ const slug = getPhotoSlug(photo);
         )
       }
     </figure>
-    <PhotoMeta
-      title={photo.data.title}
-      series={photo.data.series}
-      date={photo.data.date}
-      location={photo.data.location}
-    />
+    <div class="card-meta">
+      <SeriesBadge series={photo.data.series} />
+      <h2>{photo.data.title}</h2>
+    </div>
   </a>
 </article>
 
@@ -44,7 +42,7 @@ const slug = getPhotoSlug(photo);
 
   a {
     display: grid;
-    gap: 11px;
+    gap: 10px;
   }
 
   figure {
@@ -69,6 +67,21 @@ const slug = getPhotoSlug(photo);
 
   .photo-card--large figure {
     aspect-ratio: 16 / 10;
+  }
+
+  .card-meta {
+    display: grid;
+    gap: 6px;
+  }
+
+  h2 {
+    margin: 0;
+    max-width: 96%;
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: clamp(15px, 1.2vw, 18px);
+    font-weight: 500;
+    line-height: 1.25;
   }
 
   .missing-image {

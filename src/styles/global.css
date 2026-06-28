@@ -97,9 +97,9 @@ img {
 .page-title {
   max-width: 780px;
   margin: 0;
-  font-size: clamp(30px, 3.2vw, 44px);
+  font-size: clamp(24px, 2.4vw, 32px);
   font-weight: 500;
-  line-height: 1.08;
+  line-height: 1.12;
 }
 
 .page-copy {
