@@ -4,7 +4,7 @@ slug: "supply-node"
 series: "Urban Structure Study"
 date: "2026-01-19"
 location: "Kanda, Tokyo"
-image: "placeholder.svg"
+image: "../../assets/photos/supply-node.jpg"
 featured: true
 order: 20
 zine_candidate: true

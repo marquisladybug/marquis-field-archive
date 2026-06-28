@@ -4,7 +4,7 @@ slug: "boundary-light"
 series: "Urban Drift"
 date: "2026-05-05"
 location: "Nakameguro, Tokyo"
-image: "placeholder.svg"
+image: "../../assets/photos/boundary-light.jpg"
 featured: true
 order: 90
 zine_candidate: true
