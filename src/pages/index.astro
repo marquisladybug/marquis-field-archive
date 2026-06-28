@@ -1,12 +1,10 @@
 ---
 import { Image } from "astro:assets";
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import PhotoGrid from "@/components/PhotoGrid.astro";
-import { getFeaturedPhotos, getPhotos, resolvePhotoImage } from "@/lib/photos";
+import { getPhotos, resolvePhotoImage } from "@/lib/photos";
 
 const photos = await getPhotos();
-const featured = getFeaturedPhotos(photos).slice(0, 4);
-const hero = featured[0] ?? photos[0];
+const hero = photos[0];
 const heroImage = hero ? resolvePhotoImage(hero.data.image) : undefined;
 ---
 
@@ -29,11 +27,6 @@ const heroImage = hero ? resolvePhotoImage(hero.data.image) : undefined;
           A quiet photo archive for urban structures, movement, light, and human trace observations by Marquis Ladybug / てんとうむし侯爵.
         </p>
       </div>
-    </section>
-
-    <section class="section">
-      <p class="kicker">Featured entries</p>
-      <PhotoGrid photos={featured} featured />
     </section>
   </main>
 </BaseLayout>

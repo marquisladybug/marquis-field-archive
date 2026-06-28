@@ -115,17 +115,8 @@ img {
   color: var(--accent);
 }
 
-.text-block .page-title {
-  max-width: 620px;
-  font-size: clamp(30px, 2.8vw, 40px);
-}
-
 .page-copy-block {
-  margin-top: 0;
-}
-
-.page-copy-block .page-title {
-  margin-bottom: 14px;
+  margin-top: 14px;
 }
 
 .text-block p {
