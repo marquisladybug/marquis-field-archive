@@ -25,11 +25,11 @@ const navItems = [
   .site-header {
     width: min(var(--max), calc(100vw - 40px));
     margin: 0 auto;
-    padding: 18px 0;
+    padding: 14px 0;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    gap: 22px;
+    gap: 20px;
     border-bottom: 1px solid var(--border-soft);
   }
 
@@ -38,7 +38,7 @@ const navItems = [
     gap: 2px;
     color: var(--text);
     font-family: var(--font-mono);
-    font-size: 11px;
+    font-size: clamp(13px, 1.1vw, 15px);
     line-height: 1.35;
     text-transform: uppercase;
   }
@@ -51,10 +51,10 @@ const navItems = [
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
-    gap: 8px 14px;
+    gap: 6px 14px;
     color: var(--muted);
     font-family: var(--font-mono);
-    font-size: 10px;
+    font-size: clamp(12px, 0.95vw, 13px);
     line-height: 1.6;
   }
 
@@ -71,13 +71,13 @@ const navItems = [
     .site-header {
       width: calc(100vw - 24px);
       display: grid;
-      gap: 14px;
-      padding: 16px 0;
+      gap: 10px;
+      padding: 13px 0;
     }
 
     .nav {
       justify-content: flex-start;
-      gap: 7px 13px;
+      gap: 4px 12px;
       max-width: 100%;
     }
   }

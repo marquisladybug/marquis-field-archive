@@ -69,14 +69,14 @@ const image = resolvePhotoImage(photo.data.image);
 <style>
   .detail {
     display: grid;
-    gap: 22px;
+    gap: 18px;
   }
 
   .detail-image {
     margin: 0;
     min-height: 48vh;
     background: var(--panel);
-    border: 1px solid var(--border-soft);
+    border: 1px solid var(--border);
     overflow: hidden;
   }
 
@@ -94,17 +94,17 @@ const image = resolvePhotoImage(photo.data.image);
   .detail-body {
     max-width: 820px;
     display: grid;
-    gap: 14px;
+    gap: 12px;
   }
 
   .detail-body :global(.photo-meta h2) {
-    font-size: clamp(19px, 2vw, 26px);
+    font-size: clamp(18px, 1.6vw, 22px);
   }
 
   .field-note {
     color: var(--accent);
     max-width: 660px;
-    font-size: 15px;
+    font-size: clamp(15px, 1vw, 16px);
   }
 
   .field-note :global(p) {
@@ -112,9 +112,9 @@ const image = resolvePhotoImage(photo.data.image);
   }
 
   .detail-nav {
-    margin-top: 52px;
-    padding-top: 18px;
-    border-top: 1px solid var(--border-soft);
+    margin-top: 42px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
     display: flex;
     justify-content: space-between;
     gap: 24px;

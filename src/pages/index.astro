@@ -49,15 +49,15 @@ const heroImage = hero ? resolvePhotoImage(hero.data.image) : undefined;
 <style>
   .hero {
     display: grid;
-    gap: 28px;
+    gap: 24px;
   }
 
   figure {
     margin: 0;
     background: var(--panel);
-    border: 1px solid var(--border-soft);
-    aspect-ratio: 21 / 8;
-    max-height: 430px;
+    border: 1px solid var(--border);
+    aspect-ratio: 16 / 7;
+    max-height: 400px;
     overflow: hidden;
   }
 
@@ -75,11 +75,11 @@ const heroImage = hero ? resolvePhotoImage(hero.data.image) : undefined;
 
   .hero-text {
     order: -1;
-    max-width: 900px;
+    max-width: 760px;
   }
 
   .hero-title {
-    font-size: clamp(38px, 6vw, 68px);
+    font-size: clamp(32px, 3.8vw, 48px);
   }
 
   @media (max-width: 760px) {
@@ -87,7 +87,7 @@ const heroImage = hero ? resolvePhotoImage(hero.data.image) : undefined;
       width: calc(100vw - 24px);
       margin-left: 50%;
       transform: translateX(-50%);
-      aspect-ratio: 16 / 10;
+      aspect-ratio: 3 / 2;
       max-height: none;
     }
   }
