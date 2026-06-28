@@ -1,0 +1,44 @@
+---
+import SeriesBadge from "@/components/SeriesBadge.astro";
+
+interface Props {
+  title: string;
+  series: "Urban Structure Study" | "Urban Drift";
+  date: string;
+  location: string;
+}
+
+const { title, series, date, location } = Astro.props;
+---
+
+<div class="photo-meta">
+  <h2>{title}</h2>
+  <div class="meta-line">
+    <SeriesBadge series={series} />
+    <span>{date}</span>
+    <span>{location}</span>
+  </div>
+</div>
+
+<style>
+  .photo-meta {
+    display: grid;
+    gap: 10px;
+  }
+
+  h2 {
+    margin: 0;
+    font-size: clamp(18px, 2.5vw, 28px);
+    font-weight: 500;
+    line-height: 1.1;
+  }
+
+  .meta-line {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 14px;
+    color: var(--muted);
+    font-size: 12px;
+  }
+</style>

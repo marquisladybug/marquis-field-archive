@@ -1,0 +1,17 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import type { PhotoEntry } from "@/lib/photos";
+
+interface Props {
+  photo: PhotoEntry;
+}
+
+const { photo } = Astro.props;
+---
+
+<BaseLayout
+  title={photo.data.title}
+  description={`${photo.data.title}. ${photo.data.series} field note from ${photo.data.location}.`}
+>
+  <slot />
+</BaseLayout>

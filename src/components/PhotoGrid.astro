@@ -1,0 +1,42 @@
+---
+import PhotoCard from "@/components/PhotoCard.astro";
+import type { PhotoEntry } from "@/lib/photos";
+
+interface Props {
+  photos: PhotoEntry[];
+  featured?: boolean;
+}
+
+const { photos, featured = false } = Astro.props;
+---
+
+<div class:list={["photo-grid", featured && "photo-grid--featured"]}>
+  {photos.map((photo) => <PhotoCard photo={photo} large={featured} />)}
+</div>
+
+<style>
+  .photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 52px 24px;
+  }
+
+  .photo-grid--featured {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 60px 28px;
+  }
+
+  @media (max-width: 980px) {
+    .photo-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 680px) {
+    .photo-grid,
+    .photo-grid--featured {
+      grid-template-columns: 1fr;
+      gap: 42px;
+    }
+  }
+</style>

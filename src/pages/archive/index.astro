@@ -1,0 +1,18 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import PhotoGrid from "@/components/PhotoGrid.astro";
+import { getPhotos } from "@/lib/photos";
+
+const photos = await getPhotos();
+---
+
+<BaseLayout title="Field Archive" description="All Marquis Ladybug photo archive entries.">
+  <main class="page">
+    <section class="section">
+      <p class="kicker">Field Archive</p>
+      <h1 class="page-title">All entries</h1>
+      <p class="page-copy">Photographs listed as observation records: title, series, date, location.</p>
+    </section>
+    <PhotoGrid photos={photos} />
+  </main>
+</BaseLayout>

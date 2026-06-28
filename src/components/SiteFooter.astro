@@ -1,0 +1,30 @@
+<footer class="site-footer">
+  <p>Marquis Ladybug / てんとうむし侯爵</p>
+  <p>Civilization OS field logs. Static archive, no feed.</p>
+</footer>
+
+<style>
+  .site-footer {
+    width: min(var(--max), calc(100vw - 40px));
+    margin: auto auto 0;
+    padding: 28px 0 36px;
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 12px;
+  }
+
+  .site-footer p {
+    margin: 0;
+  }
+
+  @media (max-width: 760px) {
+    .site-footer {
+      width: calc(100vw - 24px);
+      display: grid;
+      gap: 8px;
+    }
+  }
+</style>

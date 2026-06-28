@@ -1,0 +1,24 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import PhotoGrid from "@/components/PhotoGrid.astro";
+import { getPhotos, getSeriesPhotos } from "@/lib/photos";
+
+const photos = getSeriesPhotos(await getPhotos(), "Urban Structure Study");
+---
+
+<BaseLayout title="Urban Structure Study" description="Hard infrastructure observation logs from the Marquis Ladybug Field Archive.">
+  <main class="page">
+    <section class="section structure-head">
+      <p class="kicker">Series 01</p>
+      <h1 class="page-title">Urban Structure Study</h1>
+      <p class="page-copy">Hard infrastructure observation logs. Short titles, firm edges, direct records.</p>
+    </section>
+    <PhotoGrid photos={photos} />
+  </main>
+</BaseLayout>
+
+<style>
+  .structure-head {
+    padding-bottom: 84px;
+  }
+</style>

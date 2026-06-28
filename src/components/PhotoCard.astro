@@ -1,0 +1,86 @@
+---
+import { Image } from "astro:assets";
+import PhotoMeta from "@/components/PhotoMeta.astro";
+import { getPhotoSlug, resolvePhotoImage, type PhotoEntry } from "@/lib/photos";
+import { withBase } from "@/lib/paths";
+
+interface Props {
+  photo: PhotoEntry;
+  large?: boolean;
+}
+
+const { photo, large = false } = Astro.props;
+const image = resolvePhotoImage(photo.data.image);
+const imageAlt = `${photo.data.title}, ${photo.data.location}`;
+const slug = getPhotoSlug(photo);
+---
+
+<article class:list={["photo-card", large && "photo-card--large"]}>
+  <a href={withBase(`/archive/${slug}/`)} aria-label={`Open ${photo.data.title}`}>
+    <figure>
+      {
+        typeof image === "string" ? (
+          <img src={image} alt={imageAlt} loading="lazy" />
+        ) : image ? (
+          <Image src={image} alt={imageAlt} loading="lazy" widths={[480, 820, 1200, 1600]} sizes={large ? "(max-width: 760px) 96vw, 50vw" : "(max-width: 760px) 96vw, 33vw"} />
+        ) : (
+          <div class="missing-image" role="img" aria-label={imageAlt}>Image pending</div>
+        )
+      }
+    </figure>
+    <PhotoMeta
+      title={photo.data.title}
+      series={photo.data.series}
+      date={photo.data.date}
+      location={photo.data.location}
+    />
+  </a>
+</article>
+
+<style>
+  .photo-card {
+    min-width: 0;
+  }
+
+  a {
+    display: grid;
+    gap: 16px;
+  }
+
+  figure {
+    margin: 0;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+  }
+
+  img,
+  :global(.photo-card picture),
+  :global(.photo-card picture img) {
+    width: 100%;
+    height: 100%;
+  }
+
+  img,
+  :global(.photo-card picture img) {
+    object-fit: cover;
+  }
+
+  .photo-card--large figure {
+    aspect-ratio: 16 / 10;
+  }
+
+  .missing-image {
+    height: 100%;
+    display: grid;
+    place-items: center;
+    color: var(--muted);
+    font-size: 12px;
+  }
+
+  .photo-card:hover figure,
+  .photo-card:focus-within figure {
+    border-color: var(--accent);
+  }
+</style>
