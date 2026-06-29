@@ -4,10 +4,9 @@ slug: "low-light-passage"
 series: "Urban Drift"
 date: "2026-05-17"
 location: "Yoyogi, Tokyo"
-image: "placeholder.svg"
+image: "low-light-passage.jpg"
 featured: false
-order: 100
+order: 150
 ---
 
-A dim passage compresses the street into a slower rhythm.
-Movement softens against the wall.
+暗部・通路・人物／構造内を通過する人間の痕跡

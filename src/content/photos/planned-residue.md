@@ -4,10 +4,9 @@ slug: "planned-residue"
 series: "Urban Structure Study"
 date: "2026-04-22"
 location: "Ariake, Tokyo"
-image: "placeholder.svg"
+image: "planned-residue.jpg"
 featured: false
-order: 80
+order: 50
 ---
 
-Temporary marks remain after the work has shifted elsewhere.
-The planned city keeps its residue visible.
+計画都市の残滓／汐留的な都市記憶

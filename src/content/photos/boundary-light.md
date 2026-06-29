@@ -6,9 +6,8 @@ date: "2026-05-05"
 location: "Nakameguro, Tokyo"
 image: "boundary-light.jpg"
 featured: true
-order: 90
+order: 110
 zine_candidate: true
 ---
 
-Late light catches the edge between wall, road, and passing body.
-The boundary is brief but exact.
+都市遠景・水路・緑・時間境界

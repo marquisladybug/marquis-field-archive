@@ -4,10 +4,9 @@ slug: "routing-matrix"
 series: "Urban Structure Study"
 date: "2026-02-03"
 location: "Nihonbashi, Tokyo"
-image: "placeholder.svg"
+image: "routing-matrix.jpg"
 featured: false
-order: 30
+order: 40
 ---
 
-Lines cross above the pedestrian layer.
-The city exposes a diagram it usually keeps hidden.
+道路・白線・歩道橋・高架／交通処理面
