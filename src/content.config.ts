@@ -6,6 +6,7 @@ const photos = defineCollection({
     title: z.string(),
     series: z.enum(["Urban Structure Study", "Urban Drift"]),
     date: z.string(),
+    displayDate: z.string().optional(),
     location: z.string(),
     image: z.string(),
     instagram: z.string().url().optional(),

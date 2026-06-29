@@ -2,7 +2,8 @@
 title: "Logistics Gate"
 slug: "logistics-gate"
 series: "Urban Structure Study"
-date: "2026-06-02"
+date: "2026-06-01"
+displayDate: "2026.06"
 location: "Tokyo Bay, Tokyo"
 image: "logistics-gate.jpg"
 featured: false

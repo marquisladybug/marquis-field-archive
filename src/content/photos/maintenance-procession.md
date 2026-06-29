@@ -3,6 +3,7 @@ title: "Maintenance Procession"
 slug: "maintenance-procession"
 series: "Urban Structure Study"
 date: "2026-01-12"
+displayDate: "2026.01"
 location: "Shinjuku, Tokyo"
 image: "maintenance-procession.jpg"
 featured: true

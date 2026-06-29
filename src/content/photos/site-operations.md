@@ -3,6 +3,7 @@ title: "Site Operations"
 slug: "site-operations"
 series: "Urban Structure Study"
 date: "2026-02-16"
+displayDate: "2026.02"
 location: "Shibuya, Tokyo"
 image: "site-operations.jpg"
 featured: false
