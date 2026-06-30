@@ -2,8 +2,8 @@
 title: "Planned Residue"
 slug: "planned-residue"
 series: "Urban Structure Study"
-date: "2026-04-22"
-displayDate: "2026.04"
+date: "2026-05-27"
+displayDate: "2026.05"
 location: "Ariake, Tokyo"
 image: "planned-residue.jpg"
 featured: false

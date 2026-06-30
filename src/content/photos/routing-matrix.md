@@ -2,8 +2,8 @@
 title: "Routing Matrix"
 slug: "routing-matrix"
 series: "Urban Structure Study"
-date: "2026-02-03"
-displayDate: "2026.02"
+date: "2026-06-06"
+displayDate: "2026.06"
 location: "Nihonbashi, Tokyo"
 image: "routing-matrix.jpg"
 featured: false

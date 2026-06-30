@@ -2,8 +2,8 @@
 title: "Rest Protocol"
 slug: "rest-protocol"
 series: "Urban Drift"
-date: "2026-06-01"
-displayDate: "2026.06"
+date: "2026-05-17"
+displayDate: "2026.05"
 location: "Tokyo, Japan"
 image: "rest-protocol.jpg"
 featured: false

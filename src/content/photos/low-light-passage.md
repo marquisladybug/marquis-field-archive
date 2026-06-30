@@ -2,7 +2,7 @@
 title: "Low Light Passage"
 slug: "low-light-passage"
 series: "Urban Drift"
-date: "2026-05-17"
+date: "2026-05-31"
 displayDate: "2026.05"
 location: "Yoyogi, Tokyo"
 image: "low-light-passage.jpg"
