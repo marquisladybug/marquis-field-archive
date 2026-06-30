@@ -16,7 +16,44 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
         <p>
           Urban Structure Study follows fixed infrastructure and operating faces. Urban Drift follows light, motion, weathering, and human trace moving through that infrastructure. The photographs are not explanations; they are compressed observation logs.
         </p>
+        <div class="about-notes">
+          <p>
+            Instagram: <a href="https://www.instagram.com/marquis_ladybug/">@marquis_ladybug</a>
+          </p>
+          <p>
+            All images are protected by copyright. Unauthorized reproduction, redistribution, modification, or commercial use is prohibited.
+          </p>
+        </div>
       </div>
     </section>
   </main>
 </BaseLayout>
+
+<style>
+  .about-notes {
+    margin-top: 28px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border-soft);
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.55;
+  }
+
+  .about-notes p {
+    margin: 0 0 8px;
+  }
+
+  .about-notes p:last-child {
+    margin-bottom: 0;
+  }
+
+  .about-notes a {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .about-notes a:hover,
+  .about-notes a:focus-visible {
+    color: var(--text);
+    border-color: var(--text);
+  }
+</style>
